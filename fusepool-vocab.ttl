@@ -1,0 +1,134 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix pmo: <http://www.patexpert.org/ontologies/pmo.owl#> .
+@prefix fp: <http://fusepool.info/vocab#> .
+
+<http://fusepool.info/vocab>
+    a owl:Ontology;
+    owl:versionInfo "0.01";
+    rdfs:label "The Fusepool vocabulary"@en ;
+    rdfs:comment "This is a group of vocabularies that is used on the Fusepool platform. Status: TESTING! Coverage: Patents, Publications, Funding, and general purpose."@en ;
+    dcterms:created "2013-07-16"^^xsd:date ;
+    dcterms:modified "2013-07-16"^^xsd:date ;
+    dcterms:title "The Fusepool vocabularies"@en ;
+    dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:contributor <http://csarven.ca/#i> ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+
+# --- Patents ---------------------
+
+fp:filingOffice
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "filing office"@en ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+fp:country
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "country"@en ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+fp:applType
+    a rdf:Property ;
+    rdfs:label "has application type"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:usSeriesCode
+    a rdf:Property ;
+    rdfs:label "has US Series Code"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:usArtUnit
+    a rdf:Property ;
+    rdfs:label "has US Art Unit"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:isRepresentative
+    a rdf:Property ;
+    rdfs:label "is representative"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:priorityClaim
+    a rdf:Property ;
+    rdfs:label "priority claim"@en ;
+    rdfs:range pmo:PatentPublication ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:agent
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "has agent"@en ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf fp:agentOf ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:agentOf
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "is agent of"@en ;
+    rdfs:range pmo:PatentPublication ;
+    owl:inverseOf fp:agent ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:registeredNumber
+    a rdf:Property ;
+    rdfs:label "has registered number"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:ead
+    a rdf:Property ;
+    rdfs:label "has ead"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "XXX: Can't recall what this was for. Look it up"@en ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:status
+    a rdf:Property ;
+    rdfs:label "has status"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:claim
+    a rdf:Property ;
+    rdfs:label "claims"@en ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+
+
+# --- Funding ---------------------
+fp:Topic
+    a rdfs:Class , owl:Class ;
+    rdfs:label "Topic"@en ;
+    rdfs:comment "Class for topics"@en ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:Call
+    a rdfs:Class , owl:Class ;
+    rdfs:comment "Class for calls, funding opportunities, announcements, papers."@en ;
+    .
+fp:budget
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:label "has budget"@en ;
+    rdfs:comment "XXX: If the budget value can be codified with currencies, consider changing it to ObjectProperty" ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:fundingScheme
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:label "has funding scheme"@en ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
