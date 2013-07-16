@@ -18,7 +18,6 @@
     dcterms:title "The Fusepool vocabularies"@en ;
     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:contributor <http://csarven.ca/#i> ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
 
 
@@ -30,14 +29,6 @@ fp:filingOffice
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
-
-fp:country
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:label "country"@en ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
-    .
-
 fp:applType
     a rdf:Property ;
     rdfs:label "has application type"@en ;
@@ -135,7 +126,14 @@ fp:fundingScheme
     .
 
 
+
 # --- General purpose ---------------------
+fp:country
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "country"@en ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
 fp:validFrom
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "valid from"@en ;
