@@ -120,6 +120,7 @@ fp:Topic
 fp:Call
     a rdfs:Class , owl:Class ;
     rdfs:comment "Class for calls, funding opportunities, announcements, papers."@en ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
 fp:budget
     a rdf:Property , owl:DatatypeProperty ;
@@ -130,5 +131,20 @@ fp:budget
 fp:fundingScheme
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "has funding scheme"@en ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+
+# --- General purpose ---------------------
+fp:validFrom
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:label "valid from"@en ;
+    rdfs:comment "time interval a resource is valid from"@en ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:validTo
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:label "valid to"@en ;
+    rdfs:comment "time interval a resource is valid until"@en ;
     rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
