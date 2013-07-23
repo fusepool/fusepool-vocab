@@ -22,13 +22,6 @@
 
 
 # --- Patents ---------------------
-
-fp:filingOffice
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:label "filing office"@en ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
-    .
 fp:applType
     a rdf:Property ;
     rdfs:label "has application type"@en ;
@@ -59,20 +52,7 @@ fp:priorityClaim
     rdfs:range pmo:PatentPublication ;
     rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
-fp:agent
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:label "has agent"@en ;
-    rdfs:range foaf:Agent ;
-    owl:inverseOf fp:agentOf ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
-    .
-fp:agentOf
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:label "is agent of"@en ;
-    rdfs:range pmo:PatentPublication ;
-    owl:inverseOf fp:agent ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
-    .
+
 fp:registeredNumber
     a rdf:Property ;
     rdfs:label "has registered number"@en ;
@@ -101,18 +81,44 @@ fp:claim
 
 
 
-# --- Funding ---------------------
+# --- General purpose ---------------------
 fp:Topic
     a rdfs:Class , owl:Class ;
     rdfs:label "Topic"@en ;
-    rdfs:comment "Class for topics"@en ;
+    rdfs:comment "Class for topics. XXX: Probably going to deprecate this in favour of using skos:Concept"@en ;
     rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
+
 fp:Call
     a rdfs:Class , owl:Class ;
     rdfs:comment "Class for calls, funding opportunities, announcements, papers."@en ;
     rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
+
+fp:submittedTo
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "submitted to"@en ;
+    rdfs:comment "Submittion of a document to some agent e.g., a patent document, journal article, or project deliverable."@en ;
+    rdfs:range foaf:Agent ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+fp:agent
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "has agent"@en ;
+    rdfs:comment "an agent; person or an organization, that acts as a representative for a document e.g., corresponding author, attorney, mediator."@en ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf fp:agentOf ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+fp:agentOf
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "is agent of"@en ;
+    owl:inverseOf fp:agent ;
+    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    .
+
+
 fp:budget
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "has budget"@en ;
@@ -125,15 +131,6 @@ fp:fundingScheme
     rdfs:isDefinedBy <http://fusepool.info/vocab> ;
     .
 
-
-
-# --- General purpose ---------------------
-fp:country
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:label "country"@en ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
-    .
 fp:validFrom
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "valid from"@en ;
