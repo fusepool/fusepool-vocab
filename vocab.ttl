@@ -6,9 +6,9 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix pmo: <http://www.patexpert.org/ontologies/pmo.owl#> .
-@prefix fp: <http://fusepool.info/vocab#> .
+@prefix fp: <http://fusepool.eu/ontologies/general#> .
 
-<http://fusepool.info/vocab>
+<http://fusepool.eu/ontologies/general>
     a owl:Ontology;
     owl:versionInfo "0.01";
     rdfs:label "The Fusepool vocabulary"@en ;
@@ -26,57 +26,57 @@ fp:applType
     a rdf:Property ;
     rdfs:label "has application type"@en ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:usSeriesCode
     a rdf:Property ;
     rdfs:label "has US Series Code"@en ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:usArtUnit
     a rdf:Property ;
     rdfs:label "has US Art Unit"@en ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:isRepresentative
     a rdf:Property ;
     rdfs:label "is representative"@en ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:priorityClaim
     a rdf:Property ;
     rdfs:label "priority claim"@en ;
     rdfs:range pmo:PatentPublication ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 fp:registeredNumber
     a rdf:Property ;
     rdfs:label "has registered number"@en ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:ead
     a rdf:Property ;
     rdfs:label "has ead"@en ;
     rdfs:range rdfs:Literal ;
     rdfs:comment "XXX: Can't recall what this was for. Look it up"@en ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:status
     a rdf:Property ;
     rdfs:label "has status"@en ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:claim
     a rdf:Property ;
     rdfs:label "claims"@en ;
     rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 
@@ -86,13 +86,13 @@ fp:Topic
     a rdfs:Class , owl:Class ;
     rdfs:label "Topic"@en ;
     rdfs:comment "Class for topics. XXX: Probably going to deprecate this in favour of using skos:Concept"@en ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 fp:Call
     a rdfs:Class , owl:Class ;
     rdfs:comment "Class for calls, funding opportunities, announcements, papers."@en ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 fp:submittedTo
@@ -100,7 +100,7 @@ fp:submittedTo
     rdfs:label "submitted to"@en ;
     rdfs:comment "Submittion of a document to some agent e.g., a patent document, journal article, or project deliverable."@en ;
     rdfs:range foaf:Agent ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 fp:agent
@@ -109,13 +109,13 @@ fp:agent
     rdfs:comment "an agent; person or an organization, that acts as a representative for a document e.g., corresponding author, attorney, mediator."@en ;
     rdfs:range foaf:Agent ;
     owl:inverseOf fp:agentOf ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:agentOf
     a rdf:Property , owl:ObjectProperty ;
     rdfs:label "is agent of"@en ;
     owl:inverseOf fp:agent ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 
@@ -123,23 +123,23 @@ fp:budget
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "has budget"@en ;
     rdfs:comment "XXX: If the budget value can be codified with currencies, consider changing it to ObjectProperty" ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:fundingScheme
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "has funding scheme"@en ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 
 fp:validFrom
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "valid from"@en ;
     rdfs:comment "time interval a resource is valid from"@en ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
 fp:validTo
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:label "valid to"@en ;
     rdfs:comment "time interval a resource is valid until"@en ;
-    rdfs:isDefinedBy <http://fusepool.info/vocab> ;
+    rdfs:isDefinedBy <http://fusepool.eu/ontologies/general> ;
     .
